@@ -9,3 +9,17 @@ Content-Type: application/json
   "birth": "1994-03-20",
   "phone": "010-9895-2895"
 }
+
+
+### token filter test
+GET http://localhost:8081/customer
+
+
+### sign in customer test
+POST http://localhost:8081/signIn/customer
+Content-Type: application/json
+
+{
+  "email" : "dongvin99@naver.com",
+  "password": "1111"
+}

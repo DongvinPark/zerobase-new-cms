@@ -13,6 +13,14 @@ public class CustomerService {
     private final CustomerRepository customerRepository;
 
 
+    public Optional<CustomerEntity> findByIdAndEmail(Long id, String email){
+        return customerRepository.findById(id).stream().filter(
+            customerEntity -> customerEntity.getEmail().equals(email)
+        ).findFirst();
+    }
+
+
+
     public Optional<CustomerEntity> findValidCustomer(
         String email, String password
     ){

@@ -1,5 +1,6 @@
 package com.zerobase.exception;
 
+import javax.servlet.ServletException;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.ToString;
@@ -21,6 +22,8 @@ public class ExceptionController {
             new ExceptionResponse(customException.getMessage(), customException.getErrorCode())
         );
     }
+
+
 
     @Getter
     @ToString
