@@ -1,6 +1,8 @@
 package com.zerobase.application;
 
 import com.zerobase.domain.SignInForm;
+import com.zerobase.domain.common.UserType;
+import com.zerobase.domain.config.JwtAuthenticationProvider;
 import com.zerobase.domain.model.CustomerEntity;
 import com.zerobase.exception.CustomException;
 import com.zerobase.exception.ErrorCode;
@@ -12,6 +14,7 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class SignInApplication {
     private final CustomerService customerService;
+    private final JwtAuthenticationProvider provider;
 
     public String customerLoginToken(SignInForm form){
         //1. 로그인 가능 여부
@@ -19,10 +22,7 @@ public class SignInApplication {
             .orElseThrow( () -> new CustomException(ErrorCode.LOGIN_CHECK_FAIL));
 
         //2. 토큰 발행
-
-
         //3. 토큰 리스펀스한다.
-
-        return "";
+        return provider.createToken(customerEntity.getEmail(), customerEntity.getId(), UserType.CUSTOMER);
     }
 }
