@@ -1,0 +1,11 @@
+### sign up request
+POST http://localhost:8081/signup
+Content-Type: application/json
+
+{
+  "email": "dongvin99@naver.com",
+  "name": "박동빈",
+  "password": "1111",
+  "birth": "1994-03-20",
+  "phone": "010-9895-2895"
+}
