@@ -2,7 +2,7 @@ package com.zerobase.config.filter;
 
 import com.zerobase.domain.common.UserVo;
 import com.zerobase.domain.config.JwtAuthenticationProvider;
-import com.zerobase.service.CustomerService;
+import com.zerobase.service.customer.CustomerService;
 import java.io.IOException;
 import javax.servlet.Filter;
 import javax.servlet.FilterChain;
