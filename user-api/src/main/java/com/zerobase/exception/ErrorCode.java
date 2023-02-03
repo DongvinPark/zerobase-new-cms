@@ -14,7 +14,8 @@ public enum ErrorCode {
     EXPIRED_CODE(HttpStatus.BAD_REQUEST, "인증 유효시간을 초과하였습니다."),
 
     //login
-    LOGIN_CHECK_FAIL(HttpStatus.BAD_REQUEST, "아이디 또는 패스워드가 일치하지 않습니다.");
+    LOGIN_CHECK_FAIL(HttpStatus.BAD_REQUEST, "아이디 또는 패스워드가 일치하지 않습니다."),
+    NOT_ENOUGH_BALANCE(HttpStatus.BAD_REQUEST, "잔액이 부족합니다.");
 
     private final HttpStatus httpStatus;
     private final String detail;

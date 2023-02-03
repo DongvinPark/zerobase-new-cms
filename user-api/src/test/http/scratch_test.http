@@ -1,5 +1,5 @@
 ### sign up request
-POST http://localhost:8081/signup
+POST http://localhost:8081/signup/customer
 Content-Type: application/json
 
 {
