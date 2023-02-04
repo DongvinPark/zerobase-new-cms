@@ -9,11 +9,11 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZ
   "items" : [
     {
       "count": 1,
-      "name": "상품의 아이템",
-      "price": 10000
+      "name": "270",
+      "price": 100000
     }
   ],
-  "name": "나이키 에어포스"
+  "name": "나이키 에어포스 2"
 }
 
 
@@ -89,3 +89,39 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZ
 ### search pruduct detail
 GET http://localhost:8082/search/product/detail?productId=3
 X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1NDc0MDYyLCJleHAiOjE2NzU1NjA0NjJ9.b12ZABvZlWmMx2FzHQWtQVJg-G3-GvT1oSsKC_3LLwI
+
+
+
+
+### add cart
+POST http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH_TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU1MTc3MTQsImV4cCI6MTY3NTYwNDExNH0.pd-MRbI10C4A_MPsOuebplZRWIZbS9yqGF1_IvrGS3Y
+
+{
+  "id": 5,
+  "name": "나이키 에어포스 2",
+  "description": "상품 설명",
+  "items": [
+    {
+      "id": 12,
+      "name": "270",
+      "price": 100000,
+      "count": 1
+    }
+  ]
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
