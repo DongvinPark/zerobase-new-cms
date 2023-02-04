@@ -47,6 +47,18 @@ public class ProductService {
         return product;
     }
 
+
+
+    @Transactional
+    public void deleteProduct(Long sellerId, Long productId){
+        Product product = productRepository.findBySellerIdAndId(sellerId, productId)
+            .orElseThrow( () -> new CustomException(ErrorCode.NOT_FOUND_PRODUCT) );
+
+        //Product 엔티티 클래스를 정의할 때, @OneToMany(cascade = CascadeType.ALL)이라고 정의해준 것이 기억날 것이다.
+        //프로덕트를 삭제하면, 그거에 딸려있는 프로덕트 아이템들도 전부 삭제하기 위한 것이다.
+        productRepository.delete(product);
+    }
+
 }
 
 
