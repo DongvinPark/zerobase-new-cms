@@ -1,13 +1,13 @@
 ### sign up request
-POST http://localhost:8081/signup/customer
+POST http://localhost:8081/signup/seller
 Content-Type: application/json
 
 {
   "email": "dongvin99@naver.com",
   "name": "박동빈",
   "password": "1111",
-  "birth": "1994-03-20",
-  "phone": "010-9895-2895"
+  "birth": "2023-02-04",
+  "phone": "010-0000-0000"
 }
 
 
@@ -16,10 +16,15 @@ GET http://localhost:8081/customer
 
 
 ### sign in customer test
-POST http://localhost:8081/signIn/customer
+POST http://localhost:8081/signIn/seller
 Content-Type: application/json
 
 {
   "email" : "dongvin99@naver.com",
   "password": "1111"
 }
+
+### vefiry email
+GET http://localhost:8081/signup/seller/verify/?email=dongvin99@naver.com&code=C9OPmeyvVs
+
+
