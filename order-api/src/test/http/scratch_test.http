@@ -1,3 +1,4 @@
+
 ### add product
 POST http://localhost:8082/seller/product
 Content-Type: application/json
@@ -17,6 +18,27 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZ
 
 
 
+### update product
+PUT http://localhost:8082/seller/product
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1NDc0MDYyLCJleHAiOjE2NzU1NjA0NjJ9.b12ZABvZlWmMx2FzHQWtQVJg-G3-GvT1oSsKC_3LLwI
+
+{
+  "description" : "상품 설명",
+  "items" : [
+    {
+      "id" : 1,
+      "count": 1,
+      "name": "상품의 아이템",
+      "price": 10000
+    }
+  ],
+  "id" : 1,
+  "name": "나이키 에어포스 한정판"
+}
+
+
+
 ### product item add
 POST http://localhost:8082/seller/product/item
 Content-Type: application/json
@@ -28,3 +50,29 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZ
       "name": "상품의 아이템",
       "price": 10000
     }
+
+
+
+### product item Update
+PUT http://localhost:8082/seller/product/item
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1NDc0MDYyLCJleHAiOjE2NzU1NjA0NjJ9.b12ZABvZlWmMx2FzHQWtQVJg-G3-GvT1oSsKC_3LLwI
+
+{
+  "id": 1,
+  "productId" : 1,
+  "count": 1,
+  "name": "상품의 아이템 수정완료.",
+  "price": 15000
+}
+
+
+### delete product
+DELETE http://localhost:8082/seller/product?id=1
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1NDc0MDYyLCJleHAiOjE2NzU1NjA0NjJ9.b12ZABvZlWmMx2FzHQWtQVJg-G3-GvT1oSsKC_3LLwI
+
+
+
+### delete product item
+DELETE http://localhost:8082/seller/product/item?id=10
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1NDc0MDYyLCJleHAiOjE2NzU1NjA0NjJ9.b12ZABvZlWmMx2FzHQWtQVJg-G3-GvT1oSsKC_3LLwI
