@@ -32,7 +32,7 @@ public class ProductSearchService {
 
     @Transactional(readOnly = true)
     public List<Product> getListByProductIds(List<Long> productIds){
-        return productRepository.findAllById(productIds);
+        return productRepository.findAllByIdIn(productIds);
     }
 
 }
