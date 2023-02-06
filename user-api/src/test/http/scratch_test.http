@@ -1,5 +1,5 @@
 ### sign up request
-POST http://localhost:8081/signup/customer
+POST http://localhost:8081/signup/seller
 Content-Type: application/json
 
 {
@@ -15,7 +15,7 @@ Content-Type: application/json
 GET http://localhost:8081/customer
 
 
-### sign in customer test
+### sign in customer/seller test
 POST http://localhost:8081/signIn/customer
 Content-Type: application/json
 
@@ -28,3 +28,21 @@ Content-Type: application/json
 GET http://localhost:8081/signup/seller/verify/?email=dongvin99@naver.com&code=C9OPmeyvVs
 
 
+
+### change balance - only for customer
+POST http://localhost:8081/customer/balance
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NDk4MzcsImV4cCI6MTY3NTczNjIzN30.tUA2B7Mc6EiovJzJEPFUPgtBWtUeFQsJGSGANsTtoXg
+
+{
+  "from": "server",
+  "message" : "money charge",
+  "money": 100000
+}
+
+
+
+### customer getInfo
+GET customer/getInfo
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NDk4MzcsImV4cCI6MTY3NTczNjIzN30.tUA2B7Mc6EiovJzJEPFUPgtBWtUeFQsJGSGANsTtoXg

@@ -19,6 +19,20 @@ public class ProductItemService {
     private final ProductRepository productRepository;
     private final ProductItemRepository productItemRepository;
 
+    //get and save 전략
+    @Transactional(readOnly = true)
+    public ProductItem getProductItem(Long id){
+        return productItemRepository.findById(id).orElseThrow(
+            () -> new CustomException(ErrorCode.NOT_FOUND_ITEM)
+        );
+    }
+
+
+    @Transactional
+    public ProductItem saveProductItem(ProductItem productItem){
+        return productItemRepository.save(productItem);
+    }
+
 
     @Transactional
     public Product addProductItem(Long sellerId, AddProductItemForm form){

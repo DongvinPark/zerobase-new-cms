@@ -1,8 +1,8 @@
 
-### add product
+### add product - only for seller
 POST http://localhost:8082/seller/product
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1NDc0MDYyLCJleHAiOjE2NzU1NjA0NjJ9.b12ZABvZlWmMx2FzHQWtQVJg-G3-GvT1oSsKC_3LLwI
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NDk4MzcsImV4cCI6MTY3NTczNjIzN30.tUA2B7Mc6EiovJzJEPFUPgtBWtUeFQsJGSGANsTtoXg
 
 {
   "description" : "상품 설명",
@@ -93,10 +93,10 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZ
 
 
 
-### add cart
+### add cart - only for customer
 POST http://localhost:8082/customer/cart
 Content-Type: application/json
-X-AUTH_TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU1MTc3MTQsImV4cCI6MTY3NTYwNDExNH0.pd-MRbI10C4A_MPsOuebplZRWIZbS9yqGF1_IvrGS3Y
+X-AUTH_TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NDk4MzcsImV4cCI6MTY3NTczNjIzN30.tUA2B7Mc6EiovJzJEPFUPgtBWtUeFQsJGSGANsTtoXg
 
 {
   "id": 5,
@@ -112,6 +112,39 @@ X-AUTH_TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZ
   ]
 }
 
+
+### get cart
+GET http://localhost:8082/customer/cart
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NDk4MzcsImV4cCI6MTY3NTczNjIzN30.tUA2B7Mc6EiovJzJEPFUPgtBWtUeFQsJGSGANsTtoXg
+
+
+
+### order cart
+POST http://localhost:8082/customer/cart/order
+Content-Type: application/json
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NDk4MzcsImV4cCI6MTY3NTczNjIzN30.tUA2B7Mc6EiovJzJEPFUPgtBWtUeFQsJGSGANsTtoXg
+
+{
+  "customerId": 1,
+  "products": [
+    {
+      "id": 5,
+      "sellerId": null,
+      "name": "나이키 에어포스 2",
+      "description": "상품 설명",
+      "items": [
+        {
+          "id": 12,
+          "name": "270",
+          "count": 1,
+          "price": 100000
+        }
+      ]
+    }
+  ],
+  "messages": []
+}
 
 
 
