@@ -7,6 +7,7 @@ import com.zerobase.cms.order.domain.ProductItem;
 import com.zerobase.cms.order.domain.redis.Cart;
 import com.zerobase.cms.order.exception.CustomException;
 import com.zerobase.cms.order.exception.ErrorCode;
+import com.zerobase.cms.order.service.EmailSendService;
 import com.zerobase.cms.order.service.ProductItemService;
 import java.util.stream.IntStream;
 import lombok.RequiredArgsConstructor;
@@ -19,6 +20,7 @@ public class OrderApplication {
     private final CartApplication cartApplication;
     private final UserClient userClient;
     private final ProductItemService productItemService;
+    private final EmailSendService emailSendService;
 
     //결제를 위해 필요한 것.
     //1. 물건들이 주문 가능한가?
@@ -56,6 +58,9 @@ public class OrderApplication {
                 .money( (-1)*totalPrice )
                 .build()
             );
+
+        //주문 결제 내역 이메일 전송.
+        emailSendService.sendOrderListEmail(token, cart, totalPrice);
 
         for(Cart.Product product : orderCart.getProducts()){
             for(Cart.ProductItem cartItem : product.getItems()){

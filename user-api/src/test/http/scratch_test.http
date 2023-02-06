@@ -16,7 +16,7 @@ GET http://localhost:8081/customer
 
 
 ### sign in customer/seller test
-POST http://localhost:8081/signIn/customer
+POST http://localhost:8081/signIn/seller
 Content-Type: application/json
 
 {
@@ -32,7 +32,7 @@ GET http://localhost:8081/signup/seller/verify/?email=dongvin99@naver.com&code=C
 ### change balance - only for customer
 POST http://localhost:8081/customer/balance
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NDk4MzcsImV4cCI6MTY3NTczNjIzN30.tUA2B7Mc6EiovJzJEPFUPgtBWtUeFQsJGSGANsTtoXg
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NjY4NDAsImV4cCI6MTY3NTc1MzI0MH0.8rWSPff1ZNRmuU2Zb1hiX0LGo2h2_O0OUOoNCTDXSgM
 
 {
   "from": "server",
