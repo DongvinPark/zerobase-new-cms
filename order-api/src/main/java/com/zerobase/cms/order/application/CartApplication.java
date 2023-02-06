@@ -52,6 +52,7 @@ public class CartApplication {
     //@Transactional
     public Cart getCart(Long customerId){
         Cart cart = refreshCart( cartService.getCart(customerId) );
+        cartService.putCart(cart.getCustomerId(), cart);
 
         Cart returnCart = new Cart();
         returnCart.setCustomerId(customerId);
@@ -67,13 +68,26 @@ public class CartApplication {
 
 
 
+    /*
+     * 새로운 입력으로 들어온 카트를 리프레시 한 후 그것으로 카트를 통째로 덮어쓰면 된다.
+     * getCart()내부에 refreshCart()가 있으므로, getCart()를 호출하면 끝난다.
+     * */
+    public Cart updateCart(Long customerId, Cart cart){
+        cartService.putCart(customerId, cart);
+        return getCart(customerId);
+    }
+
+
+
     public void clearCart(Long customerId){
         cartService.putCart(customerId, null);
     }
 
 
 
-    private Cart refreshCart(Cart cart){
+
+
+    protected Cart refreshCart(Cart cart){
         //1. 상품이나 상품 아이템의 정보, 가격, 수량이 변경됐는지 체크
         //2. 그에 맞는 알림을 제공한다.
         //3. 상품의 수량, 가격을 우리가 임의로 변경한다.
@@ -155,7 +169,6 @@ public class CartApplication {
                 cart.addMessage(builder.toString());
             }
         }//Outer for
-        cartService.putCart(cart.getCustomerId(), cart);
         return cart;
     }
 
