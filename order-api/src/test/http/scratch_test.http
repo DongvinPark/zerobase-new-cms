@@ -2,7 +2,7 @@
 ### add product - only for seller
 POST http://localhost:8082/seller/product
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NDk4MzcsImV4cCI6MTY3NTczNjIzN30.tUA2B7Mc6EiovJzJEPFUPgtBWtUeFQsJGSGANsTtoXg
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiU0VMTEVSIiwiaWF0IjoxNjc1NjY2ODk1LCJleHAiOjE2NzU3NTMyOTV9.6zsMBlxaw9-AMOXMdkn8neOj8eCAODluTDlp4HtH6HM
 
 {
   "description" : "상품 설명",
@@ -96,15 +96,15 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZ
 ### add cart - only for customer
 POST http://localhost:8082/customer/cart
 Content-Type: application/json
-X-AUTH_TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NDk4MzcsImV4cCI6MTY3NTczNjIzN30.tUA2B7Mc6EiovJzJEPFUPgtBWtUeFQsJGSGANsTtoXg
+X-AUTH_TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NjY4NDAsImV4cCI6MTY3NTc1MzI0MH0.8rWSPff1ZNRmuU2Zb1hiX0LGo2h2_O0OUOoNCTDXSgM
 
 {
-  "id": 5,
+  "id": 1,
   "name": "나이키 에어포스 2",
   "description": "상품 설명",
   "items": [
     {
-      "id": 12,
+      "id": 1,
       "name": "270",
       "price": 100000,
       "count": 1
@@ -123,19 +123,19 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZ
 ### order cart
 POST http://localhost:8082/customer/cart/order
 Content-Type: application/json
-X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NDk4MzcsImV4cCI6MTY3NTczNjIzN30.tUA2B7Mc6EiovJzJEPFUPgtBWtUeFQsJGSGANsTtoXg
+X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZXB1OWJkb2hEeDBYWFJ6dE5FPSIsImp0aSI6IkNtWUR2NU1LNVlVeWlrOEtHTkR3b3c9PSIsInJvbGVzIjoiQ1VTVE9NRVIiLCJpYXQiOjE2NzU2NjY4NDAsImV4cCI6MTY3NTc1MzI0MH0.8rWSPff1ZNRmuU2Zb1hiX0LGo2h2_O0OUOoNCTDXSgM
 
 {
   "customerId": 1,
   "products": [
     {
-      "id": 5,
+      "id": 1,
       "sellerId": null,
       "name": "나이키 에어포스 2",
       "description": "상품 설명",
       "items": [
         {
-          "id": 12,
+          "id": 1,
           "name": "270",
           "count": 1,
           "price": 100000
@@ -145,6 +145,7 @@ X-AUTH-TOKEN: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJndXBwVldKQTNXT3JyUmFhZzc3Z0U1K2QzZ
   ],
   "messages": []
 }
+
 
 
 

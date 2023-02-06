@@ -197,6 +197,7 @@ public class CartApplication {
                     cartCount = 0;
                 }
                 Integer currentCount = currentItemCountMap.get(formItem.getId());
+                if(currentCount == null) currentCount = 0;
                 return formItem.getCount() + cartCount > currentCount;
             }
         );
