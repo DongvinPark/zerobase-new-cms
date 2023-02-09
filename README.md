@@ -18,3 +18,4 @@
 ![CC674007-FFEF-40CC-B42A-5052AE70F0F6](https://user-images.githubusercontent.com/99060708/216910112-6dbe54d0-c005-48e5-bbe6-ba86049a08da.jpeg)
 ![FF9C4730-54EB-4956-9705-F1C83C27F6AC](https://user-images.githubusercontent.com/99060708/216910176-6d4f04da-6348-4ce2-a395-879ab50cfb07.jpeg)
 - 고객이 결제 일시, 품목, 가격, 총액을 자신의 메일함에서 확인
+![6DDA3906-0B5C-4105-9C1A-D6AA7003BA79](https://user-images.githubusercontent.com/99060708/217700152-ee7b4722-3f41-4394-92f4-4b2bb9e587f5.jpeg)
